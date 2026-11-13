@@ -1,0 +1,29 @@
+{
+  "id": "./",
+  "name": "Mapa dos Evangelhos",
+  "short_name": "Evangelhos",
+  "description": "Mapa interativo de paralelos entre os Evangelhos: cartões de tricô ligados por fios, para estudar, anotar e conectar passagens bíblicas.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f2a49e",
+  "theme_color": "#3e4f6e",
+  "categories": ["books", "education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "screenshots/celular.png", "sizes": "780x1688", "type": "image/png", "form_factor": "narrow", "label": "Mapa no celular" },
+    { "src": "screenshots/computador.png", "sizes": "1440x900", "type": "image/png", "form_factor": "wide", "label": "Mapa no computador" }
+  ],
+  "shortcuts": [
+    { "name": "Nova passagem", "short_name": "Nova", "url": "./?acao=nova", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Mapa dos Evangelhos</title>
+<meta name="description" content="Mapa interativo de paralelos entre os Evangelhos: cartões de tricô ligados por fios, para estudar, anotar e conectar passagens bíblicas.">
+<meta name="theme-color" content="#3e4f6e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Evangelhos">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="fonts/fredoka-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css" id="appcss">
+</head>
+<body>
+<div id="app"></div>
+<div id="boot"><span>O código personalizado deste aparelho não carregou.</span><button id="bootFix">Restaurar código original</button></div>
+<noscript>Este app precisa de JavaScript ativado.</noscript>
+<script>
+/* Carregador: usa o código original (app.css / app.js) ou o código
+   personalizado salvo neste aparelho pelo painel "Front-end".
+   Abra com ?seguro no endereço para ignorar o código personalizado. */
+(function(){
+  var safe=/[?&]seguro\b/.test(location.search),cc=null,cj=null;
+  try{if(!safe){cc=localStorage.getItem('mapa-codigo-css');cj=localStorage.getItem('mapa-codigo-js')}}catch(e){}
+  window.__MAPA={safe:safe,custom:!!(cc||cj),ok:false};
+  if(cc){var st=document.createElement('style');st.id='customcss';st.textContent=cc;document.head.appendChild(st);document.getElementById('appcss').disabled=true}
+  var s=document.createElement('script');
+  if(cj)s.textContent=cj;else s.src='app.js';
+  document.body.appendChild(s);
+  if(cc||cj){
+    setTimeout(function(){if(!window.__MAPA.ok)document.getElementById('boot').style.display='flex'},3000);
+    document.getElementById('bootFix').onclick=function(){try{localStorage.removeItem('mapa-codigo-css');localStorage.removeItem('mapa-codigo-js')}catch(e){}location.reload()};
+  }
+})();
+</script>
+</body>
+</html>
